@@ -1,4 +1,4 @@
-<div background-color="black" color="white" align="center">
+<div align="center">
 
 <p># Project-3 -- Final Project CPCC Coding Bootcamp</p>
                                         
