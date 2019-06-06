@@ -15,6 +15,9 @@ https://www.youtube.com/watch?v=LAfzHhQVvRk&feature=youtu.be
 Postman for Dummies
 https://www.youtube.com/watch?v=FjgYtQK_zLE
 
+IGDB Documentation
+https://api-docs.igdb.com/#about
+
 =================================================================================
 
 FRONTEND
