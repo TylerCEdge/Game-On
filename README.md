@@ -1,27 +1,79 @@
-<div align="center">
+# Product Name
+> Short blurb about what your product does.
 
-<p># Project-3 -- Final Project CPCC Coding Bootcamp</p>
-                                        
-<p>Requirements</p>
+[![NPM Version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Downloads Stats][npm-downloads]][npm-url]
 
-<p>React (in some way) can be minimal</p>
-  
-<p>Node and Express Web Server</p>
+One to two paragraph statement about your product and what it does.
 
-<p>SQL/Mongo with Sequelize or Mongoose</p>
+![](header.png)
 
-<p>GET and POST routes for retrieving and adding data</p>
+## Installation
 
-<p>Deployed with Heroku</p>
+OS X & Linux:
 
-<p>2 new tech/libraries/packages</p>
+```sh
+npm install my-crazy-module --save
+```
 
-<p>Allow/Involve authentication in some way</p>
+Windows:
 
-<p>Polished front end / ui</p>
+```sh
+edit autoexec.bat
+```
 
-<p>MVC folder structure</p>
+## Usage example
 
-<p>Good quality coding standards</p>
+A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
 
-</div>
+_For more examples and usage, please refer to the [Wiki][wiki]._
+
+## Development setup
+
+Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
+
+```sh
+make install
+npm test
+```
+
+## Release History
+
+* 0.2.1
+    * CHANGE: Update docs (module code remains unchanged)
+* 0.2.0
+    * CHANGE: Remove `setDefaultXYZ()`
+    * ADD: Add `init()`
+* 0.1.1
+    * FIX: Crash when calling `baz()` (Thanks @GenerousContributorName!)
+* 0.1.0
+    * The first proper release
+    * CHANGE: Rename `foo()` to `bar()`
+* 0.0.1
+    * Work in progress
+
+## Meta
+
+Your Name – [@YourTwitter](https://twitter.com/dbader_org) – YourEmail@example.com
+
+Distributed under the XYZ license. See ``LICENSE`` for more information.
+
+[https://github.com/yourname/github-link](https://github.com/dbader/)
+
+## Contributing
+
+1. Fork it (<https://github.com/yourname/yourproject/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
+
+<!-- Markdown link & img dfn's -->
+[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/datadog-metrics
+[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
+[wiki]: https://github.com/yourname/yourproject/wiki
+
