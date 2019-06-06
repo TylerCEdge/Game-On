@@ -18,6 +18,7 @@ class App extends Component {
               className="navbar-brand"
               href="https://codingthesmartway.com"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img src={logo} width="30" height="30" alt="Your A Wizard" />
             </a>
