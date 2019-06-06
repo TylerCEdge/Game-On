@@ -1,24 +1,29 @@
-# Project-3
-Final Project CPCC Coding Bootcamp
+<div align="center>
 
-Requirements
+<p># Project-3</p>
 
-React (in some way) can be minimal
+<p>Final Project CPCC Coding Bootcamp</p>
+                                        
+<p>Requirements</p>
 
-Node and Express Web Server
+<p>React (in some way) can be minimal</p>
+  
+<p>Node and Express Web Server</p>
 
-SQL/Mongo with Sequelize or Mongoose
+<p>SQL/Mongo with Sequelize or Mongoose</p>
 
-GET and POST routes for retrieving and adding data
+<p>GET and POST routes for retrieving and adding data</p>
 
-Deployed with Heroku
+<p>Deployed with Heroku</p>
 
-2 new tech/libraries/packages
+<p>2 new tech/libraries/packages</p>
 
-Allow/Involve authentication in some way
+<p>Allow/Involve authentication in some way</p>
 
-Polished front end / ui
+<p>Polished front end / ui</p>
 
-MVC folder structure
+<p>MVC folder structure</p>
 
-Good quality coding standards
+<p>Good quality coding standards</p>
+
+</div>
