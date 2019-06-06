@@ -4,11 +4,9 @@ MERN STACK TUTORIAL
 https://www.youtube.com/watch?v=qvBZevK1HPo
 
 Axios with React API Calls
-
 https://upmostly.com/tutorials/using-axios-with-react-api-requests/
 
 Accessing game data with the IGDB API
-
 https://grantwinney.com/day-15-igdb-api-internet-game-database/
 
 Video Game Site & API
