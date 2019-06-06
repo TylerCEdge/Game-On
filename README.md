@@ -1,5 +1,6 @@
-# Product Name
-> Short blurb about what your product does.
+# Game Finder App
+> This app allows you to search for games on all platforms and see information on each title.  You can then save
+the information to your profile.
 
 [![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
