@@ -1,8 +1,6 @@
 <div align="center">
 
-<p># Project-3</p>
-
-<p>Final Project CPCC Coding Bootcamp</p>
+<p># Project-3 -- Final Project CPCC Coding Bootcamp</p>
                                         
 <p>Requirements</p>
 
