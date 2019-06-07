@@ -1,7 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
+import "./edit.css";
 
-export default class CreateTodo extends Component {
+export default class EditTodo extends Component {
 
     constructor(props) {
         super(props);
@@ -9,6 +10,7 @@ export default class CreateTodo extends Component {
         this.onChangeTodoDescription = this.onChangeTodoDescription.bind(this);
         this.onChangeTodoResponsible = this.onChangeTodoResponsible.bind(this);
         this.onChangeTodoPriority = this.onChangeTodoPriority.bind(this);
+        this.onChangeTodoCompleted = this.onChangeTodoCompleted.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
@@ -17,6 +19,21 @@ export default class CreateTodo extends Component {
             todo_priority: '',
             todo_completed: false
         }
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:4000/todos/' + this.props.match.params.id)
+            .then(response => {
+                this.setState({
+                    todo_description: response.data.todo_description,
+                    todo_responsible: response.data.todo_responsible,
+                    todo_priority: response.data.todo_priority,
+                    todo_completed: response.data.todo_completed
+                })
+            })
+            .catch(function(error) {
+                console.log(error);
+            })
     }
 
     onChangeTodoDescription(e) {
@@ -33,41 +50,34 @@ export default class CreateTodo extends Component {
 
     onChangeTodoPriority(e) {
         this.setState({
-            todo_priority: e.target.value
+            todo_priority: e.targete.value
+        });
+    }
+    
+    onChangeTodoCompleted(e) {
+        this.setState({
+            todo_completed: !this.state.todo_completed
         });
     }
 
     onSubmit(e) {
         e.preventDefault();
-
-        console.log(`Form submitted:`);
-        console.log(`Todo Description: ${this.state.todo_description}`);
-        console.log(`Todo Responsible: ${this.state.todo_responsible}`);
-        console.log(`Todo Priority: ${this.state.todo_priority}`);
-        console.log(`Todo Completed: ${this.state.todo_completed}`);
-
-        const newTodo = {
+        const obj = {
             todo_description: this.state.todo_description,
             todo_responsible: this.state.todo_responsible,
             todo_priority: this.state.todo_priority,
             todo_completed: this.state.todo_completed
-        }
-
-        axios.post('http://localhost:4000/todos/add', newTodo)
+        };
+        axios.post('http://localhost:4000/todos/update/' + this.props.match.params.id, obj)
             .then(res => console.log(res.data));
 
-        this.setState({
-            todo_description: '',
-            todo_responsible: '',
-            todo_priority: '',
-            todo_completed: false
-        })
+        this.props.history.push('/');
     }
 
     render() {
         return (
-            <div style={{marginTop: 20}}>
-                <h3>Create New Todo</h3>
+            <div>
+                <h3>Update Todo</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Description: </label>
@@ -119,9 +129,23 @@ export default class CreateTodo extends Component {
                                     />
                             <label className="form-check-label">High</label>
                         </div>
-                    </div>
-                    <div className="form-group">
-                        <input type="submit" value="Create Todo" className="btn btn-primary" />
+                        <div className="form-check">
+                            <input  type="checkbox"
+                                    className="form-check-input"
+                                    id="completedCheckbox"
+                                    name="completedCheckbox"
+                                    onChange={this.onChangeTodoCompleted}
+                                    checked={this.state.todo_completed}
+                                    value={this.state.todo_completed}
+                                    />
+                            <label className="form-check-label" htmlFor="completedCheckbox">
+                                Completed
+                            </label>
+                        </div>
+                        <br/>
+                        <div className="form-group">
+                            <input type="submit" value="Update Todo" className="btn btn-primary" />
+                        </div>
                     </div>
                 </form>
             </div>

@@ -1,19 +1,17 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-
-import CreateTodo from "./components/create-todo.component";
-import EditTodo from "./components/edit-todo.component";
-import TodosList from "./components/todos-list.component";
-
+import CreateTodo from "./components/create-todo/create-todo.component";
+import EditTodo from "./components/edit-todo/edit-todo.component";
+import TodosList from "./components/todos-list/todos-list.component";
 import logo from "./logo.png";
+import "./App.css"
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div className="container">
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <nav className="navbar navbar-expand-lg">
             <a
               className="navbar-brand"
               href="https://codingthesmartway.com"
@@ -28,18 +26,13 @@ class App extends Component {
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav mr-auto">
                 <li className="navbar-item">
-                  <Link to="/" className="nav-link">
+                  <Link to="/" className="nav-link one">
                     Todos
                   </Link>
                 </li>
                 <li className="navbar-item">
-                  <Link to="/create" className="nav-link">
+                  <Link to="/create" className="nav-link two">
                     Create Todos
-                  </Link>
-                </li>
-                <li className="navbar-item">
-                  <Link to="/edit/:id" className="nav-link">
-                    Edit Todos
                   </Link>
                 </li>
               </ul>
