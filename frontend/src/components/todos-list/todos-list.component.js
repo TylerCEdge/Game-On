@@ -51,6 +51,11 @@ export default class TodosList extends Component {
         return (
             <div>
                 <h3>Coming Soon</h3>
+
+                <div id="container">
+                    
+                </div>
+
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
                         <tr>
@@ -65,6 +70,7 @@ export default class TodosList extends Component {
                     </tbody>
                 </table>
             </div>
+            
         )
     }
 }

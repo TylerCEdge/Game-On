@@ -3,8 +3,11 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import CreateTodo from "./components/create-todo/create-todo.component";
 import EditTodo from "./components/edit-todo/edit-todo.component";
 import TodosList from "./components/todos-list/todos-list.component";
+import Carousel from"./components/new-release/new-release";
 import logo from "./logo.png";
 import "./App.css"
+
+
 
 class App extends Component {
   render() {
@@ -39,7 +42,10 @@ class App extends Component {
             </div>
           </nav>
 
+          
+
           <Route path="/" exact component={TodosList} />
+          <Route path="/carousel" exact component={Carousel} />
           <Route path="/edit/:id" exact component={EditTodo} />
           <Route path="/create" exact component={CreateTodo} />
         </div>
