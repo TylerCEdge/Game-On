@@ -1,13 +1,20 @@
 h3 {
     color: white;
+    font-family: 'Russo One', sans-serif;
+    text-decoration: none;
+    color: white;
+    font-size: 5rem;
+    margin-top: 25px;
 }
 
 div {
-    background-color: yellow;
+    background-color: slategray;
+    
 }
 
 th {
     background-color: indianred;
+    
 }
 
 td {

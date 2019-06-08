@@ -18,21 +18,21 @@ class App extends Component {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={logo} width="30" height="30" alt="Your A Wizard" />
+              <img src={logo} width="50" height="50" alt="Your A Wizard" />
             </a>
             <Link to="/" className="navbar-brand">
-              MERN-Stack Todo App
+              G a m e r F i x
             </Link>
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav mr-auto">
                 <li className="navbar-item">
                   <Link to="/" className="nav-link one">
-                    Todos
+                    Search
                   </Link>
                 </li>
                 <li className="navbar-item">
                   <Link to="/create" className="nav-link two">
-                    Create Todos
+                    Your Favorites
                   </Link>
                 </li>
               </ul>
