@@ -3,8 +3,11 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import CreateTodo from "./components/create-todo/create-todo.component";
 import EditTodo from "./components/edit-todo/edit-todo.component";
 import TodosList from "./components/todos-list/todos-list.component";
+import Carousel from"./components/new-release/new-release";
 import logo from "./logo.png";
 import "./App.css"
+
+
 
 class App extends Component {
   render() {
@@ -18,28 +21,31 @@ class App extends Component {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={logo} width="30" height="30" alt="Your A Wizard" />
+              <img src={logo} width="50" height="50" alt="Your A Wizard" />
             </a>
             <Link to="/" className="navbar-brand">
-              MERN-Stack Todo App
+              G a m e r F i x
             </Link>
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav mr-auto">
                 <li className="navbar-item">
                   <Link to="/" className="nav-link one">
-                    Todos
+                    Search
                   </Link>
                 </li>
                 <li className="navbar-item">
                   <Link to="/create" className="nav-link two">
-                    Create Todos
+                    Your Favorites
                   </Link>
                 </li>
               </ul>
             </div>
           </nav>
 
+          
+
           <Route path="/" exact component={TodosList} />
+          <Route path="/carousel" exact component={Carousel} />
           <Route path="/edit/:id" exact component={EditTodo} />
           <Route path="/create" exact component={CreateTodo} />
         </div>

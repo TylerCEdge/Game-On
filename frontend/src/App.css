@@ -1,28 +1,43 @@
 .container {
   align-content: center;
   text-align: center;
+  text-decoration-color: white;
 }
 
 .navbar-brand {
-  background: cyan;
+  font-size: 2.5rem;
 }
 
-.collapse {
-  background-color: blue;
-}
+/* .collapse {
+  color: black;
+
+} */
 
 nav {
-  background-color: yellowgreen;
-}
+  background-color: slategray;
+  width: 100%;
+  padding: 10px;
+  }
 
-.one {
+/* .one {
   background-color: red;
 }
 
 .two {
   background-color: purple;
-}
+} */
 
 .navbar-brand {
-  background: indianred;
+  font-family: 'Russo One', sans-serif;
+  text-decoration: none;
+  color: white;
 }
+
+.one, .two {
+  font-family: 'Orbitron', sans-serif;
+  text-decoration-color: none;
+  color: white;
+  margin-right: 10px;
+  background-color: slategray;
+}
+
