@@ -22,7 +22,7 @@ export default class Carousel extends React.Component {
                         <img className="d-block img-fluid carousel-img" src="https://135525-391882-2-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2019/05/Mario-Kart-Tour-.jpg" alt="Third slide"/>
                     </div>
                     <div className="carousel-item">
-                        <img className="d-block img-fluid carousel-img" src="https://hb.imgix.net/fc928fb1598350a80355ad1eefe8036c1540d540.jpg?auto=compress,format&fit=crop&h=353&w=616&s=ce2bd2a9123d295720878821d329dfbc" alt="Third slide"/>
+                        <img className="d-block img-fluid carousel-img" src="https://hb.imgix.net/fc928fb1598350a80355ad1eefe8036c1540d540.jpg?auto=compress,format&fit=crop&h=353&w=616&s=ce2bd2a9123d295720878821d329dfbc" alt="Fourth slide"/>
                     </div>
                 </div>
                 <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

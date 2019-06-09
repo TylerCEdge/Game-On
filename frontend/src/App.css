@@ -11,9 +11,6 @@
   text-align: center;
 }
 
-.carousel {
-  margin: 50px;
-}
 /* .collapse {
   color: black;
 
@@ -46,8 +43,6 @@ nav {
   text-decoration-color: none;
   color: white;
   margin-right: 10px;
-  background-image: linear-gradient(to left, rgba(255,0,0,0), rgba(145, 18, 18, 0.8));
-  background-color: rgb(58, 58, 58);
   opacity: .9;
   border-radius: 5px;
 }
