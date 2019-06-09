@@ -4,40 +4,51 @@
   text-decoration-color: white;
 }
 
-.navbar-brand {
-  font-size: 2.5rem;
+.navbar-wrapper {
+  margin: auto;
+  justify-content: center;
+  width: 90%;
+  text-align: center;
 }
 
+.carousel {
+  margin: 50px;
+}
 /* .collapse {
   color: black;
 
 } */
 
 nav {
-  background-color: slategray;
-  width: 100%;
+  margin: auto;
+  /* background-color: rgb(58, 58, 58); */
+  background-image: linear-gradient(to left, rgba(255,0,0,0), rgba(145, 18, 18, 0.8));
   padding: 10px;
-  }
-
-/* .one {
-  background-color: red;
+  border-radius: 5px;
 }
 
-.two {
-  background-color: purple;
-} */
+.navbar {
+  width:100%;
+}
 
 .navbar-brand {
   font-family: 'Russo One', sans-serif;
   text-decoration: none;
   color: white;
+  font-size: 2.5rem;
 }
 
+.navbar-brand:hover, .one:hover, .two:hover {
+  color:rgba(145, 18, 18, 0.8);
+}
 .one, .two {
   font-family: 'Orbitron', sans-serif;
   text-decoration-color: none;
   color: white;
   margin-right: 10px;
-  background-color: slategray;
+  background-image: linear-gradient(to left, rgba(255,0,0,0), rgba(145, 18, 18, 0.8));
+  background-color: rgb(58, 58, 58);
+  opacity: .9;
+  border-radius: 5px;
 }
 

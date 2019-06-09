@@ -50,7 +50,7 @@ export default class EditTodo extends Component {
 
     onChangeTodoPriority(e) {
         this.setState({
-            todo_priority: e.targete.value
+            todo_priority: e.target.value
         });
     }
     
@@ -74,13 +74,16 @@ export default class EditTodo extends Component {
         this.props.history.push('/');
     }
 
+ 
+
+
     render() {
         return (
             <div>
-                <h3>Update Todo</h3>
+                <h3>Update Your Games</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
-                        <label>Description: </label>
+                        <label>Game </label>
                         <input  type="text"
                                 className="form-control"
                                 value={this.state.todo_description}
@@ -88,7 +91,7 @@ export default class EditTodo extends Component {
                                 />
                     </div>
                     <div className="form-group">
-                        <label>Responsible: </label>
+                        <label>Game Type </label>
                         <input  type="text"
                                 className="form-control"
                                 value={this.state.todo_responsible}
@@ -139,13 +142,16 @@ export default class EditTodo extends Component {
                                     value={this.state.todo_completed}
                                     />
                             <label className="form-check-label" htmlFor="completedCheckbox">
-                                Completed
+                                Cross out the Game
                             </label>
                         </div>
                         <br/>
                         <div className="form-group">
-                            <input type="submit" value="Update Todo" className="btn btn-primary" />
+                            <input type="submit" value="Update Games" className="btn btn-primary" />
                         </div>
+                        {/* <div className="form-group deleteBtn">
+                            <input type="submit" value="Delete Game" className="btn btn-primary" onChange={this.state.empty}/>
+                        </div> */}
                     </div>
                 </form>
             </div>
