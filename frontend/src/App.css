@@ -11,6 +11,9 @@
   text-align: center;
 }
 
+.carousel {
+  margin: 50px;
+}
 /* .collapse {
   color: black;
 
@@ -43,6 +46,7 @@ nav {
   text-decoration-color: none;
   color: white;
   margin-right: 10px;
+
   opacity: .9;
   border-radius: 5px;
 }
