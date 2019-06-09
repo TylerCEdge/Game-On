@@ -3,9 +3,13 @@ body {
 }
 
 .form-group {
-    font-family: 'Orbitron', sans-serif;
-    padding: 20px;
-    border-style: solid;
-    border-radius: 5px;
-    border-color: slategray;
+    text-align: center;
+}
+
+label {
+    font-size: 1.5rem;
+}
+
+.form-control {
+    text-align: center;
 }

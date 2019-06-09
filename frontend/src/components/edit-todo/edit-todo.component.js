@@ -81,6 +81,7 @@ export default class EditTodo extends Component {
         return (
             <div>
                 <h3>Update Your Games</h3>
+                <div ClassName="edit">
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Game </label>
@@ -97,6 +98,9 @@ export default class EditTodo extends Component {
                                 value={this.state.todo_responsible}
                                 onChange={this.onChangeTodoResponsible}
                                 />
+                    </div>
+                    <div className="form-group">
+                        <label>Favoritism</label>
                     </div>
                     <div className="form-group">
                         <div className="form-check form-check-inline">
@@ -147,13 +151,14 @@ export default class EditTodo extends Component {
                         </div>
                         <br/>
                         <div className="form-group">
-                            <input type="submit" value="Update Games" className="btn btn-primary" />
+                            <input type="submit" value="Update Games" className="btn btn-secondary" />
                         </div>
                         {/* <div className="form-group deleteBtn">
                             <input type="submit" value="Delete Game" className="btn btn-primary" onChange={this.state.empty}/>
                         </div> */}
                     </div>
                 </form>
+            </div>
             </div>
         )
     }

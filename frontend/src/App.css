@@ -2,6 +2,14 @@
   align-content: center;
   text-align: center;
   text-decoration-color: white;
+  background-image: linear-gradient(to left, rgba(255,0,0,0), rgba(145, 18, 18, 0.8));
+  width: 100%;
+  padding: 0;
+  border-radius: 5px;
+}
+
+#nav {
+  width: 100%;
 }
 
 .navbar-wrapper {
@@ -14,22 +22,10 @@
 .carousel {
   margin: 50px;
 }
+
 /* .collapse {
   color: black;
-
 } */
-
-nav {
-  margin: auto;
-  /* background-color: rgb(58, 58, 58); */
-  background-image: linear-gradient(to left, rgba(255,0,0,0), rgba(145, 18, 18, 0.8));
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.navbar {
-  width:100%;
-}
 
 .navbar-brand {
   font-family: 'Russo One', sans-serif;
@@ -39,8 +35,9 @@ nav {
 }
 
 .navbar-brand:hover, .one:hover, .two:hover {
-  color:rgba(145, 18, 18, 0.8);
+  color: black;
 }
+
 .one, .two {
   font-family: 'Orbitron', sans-serif;
   text-decoration-color: none;

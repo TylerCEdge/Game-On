@@ -43,12 +43,6 @@ class App extends Component {
             </div>
           </nav>
           </div>
-          {/* <div className="carousel">
-          <Carousel/>
-          </div> */}
-          
-
-
           <Route path="/" exact component={TodosList} />
           <Route path="/carousel" exact component={Carousel} />
           <Route path="/edit/:id" exact component={EditTodo} />

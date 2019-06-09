@@ -69,6 +69,7 @@ export default class CreateTodo extends Component {
         return (
             <div style={{marginTop: 20}}>
                 <h3>Add Favorites</h3>
+                <div className="add-wrapper">
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Game Name </label>
@@ -85,6 +86,9 @@ export default class CreateTodo extends Component {
                                 value={this.state.todo_responsible}
                                 onChange={this.onChangeTodoResponsible}
                                 />
+                    </div>
+                    <div className="form-group">
+                        <label>Favoritism</label>
                     </div>
                     <div className="form-group">
                         <div className="form-check form-check-inline">
@@ -122,9 +126,10 @@ export default class CreateTodo extends Component {
                         </div>
                     </div>
                     <div className="form-group">
-                        <input type="submit" value="Add Game" className="btn btn-primary" />
+                        <input type="submit" value="Add Game" className="btn btn-secondary" />
                     </div>
                 </form>
+            </div>
             </div>
         )
     }
