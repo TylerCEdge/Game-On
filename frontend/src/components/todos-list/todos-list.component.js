@@ -1,90 +1,57 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import "./list.css";
-// import DeleteBtn from '../deleteBtn/deleteBtn';
 import Carousel from '../new-release/new-release';
-import DeleteBtn from '../deleteBtn/deleteBtn';
 
-
-
-
-const Todo = props => (
+const Game = props => (
     <tr>
-        <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.todo_description}</td>
-        <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.todo_responsible}</td>
-        <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.todo_priority}</td>
-        <td className="editBtn">
-            <Link to={"/edit/" + props.todo._id}>Edit</Link>
-        </td>
-        {/* <td> 
-        ✗
-        </td>  */}
+        <td>{props.game.name}</td>
+        <td>{props.game.summary}</td>
+        <td>{props.game.popularity}</td>
     </tr>
 )
 
-export default class TodosList extends Component {
+export default class GamesList extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { todos: [] };
+        this.state = { games: [] };
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/todos/')
+        axios.get('http://localhost:4000/api/popular/')
             .then(response => {
-                this.setState({ todos: response.data });
+                this.setState({ games: response.data });
             })
             .catch(function (error) {
                 console.log(error);
             })
     }
 
-    componentDidUpdate() {
-        axios.get('http://localhost:4000/todos/')
-            .then(response => {
-                this.setState({ todos: response.data });
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
-    }
-
-    todoList() {
-        return this.state.todos.map(function (currentTodo, i) {
-            return <Todo todo={currentTodo} key={i} />;
+    gameList() {
+        return this.state.games.map(function (game, i) {
+            return <Game game={game} key={i} />;
         })
     }
 
     render() {
         return (
-            <div>
+            <>
+                <Carousel />
 
-                <div className="carousel">
-                    <Carousel />
-                </div>
-
-                <div id="container-wrapper">
-                    <div id="container">
-
-                    </div>
-
-                    <table className="table table-striped" style={{ marginTop: 30 }}>
-                        <thead>
-                            <tr>
-                                <th>Game Name</th>
-                                <th>Game Type</th>
-                                <th>Favoritism</th>
-                                <th>Actions</th>
-                                {/* <th><DeleteBtn/></th> */}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.todoList()}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+                <table className="table table-striped" style={{ marginTop: 20 }}>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Summary</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.gameList()}
+                    </tbody>
+                </table>
+            </>
         )
     }
 }
