@@ -2,15 +2,24 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import "./list.css";
+// import DeleteBtn from '../deleteBtn/deleteBtn';
+import Carousel from '../new-release/new-release';
+import DeleteBtn from '../deleteBtn/deleteBtn';
+
+
+
 
 const Todo = props => (
     <tr>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.todo_description}</td>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.todo_responsible}</td>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.todo_priority}</td>
-        <td>
+        <td className="editBtn">
             <Link to={"/edit/" + props.todo._id}>Edit</Link>
         </td>
+        {/* <td> 
+        ✗
+        </td>  */}
     </tr>
 )
 
@@ -52,17 +61,23 @@ export default class TodosList extends Component {
             <div>
                 <h3>Coming Soon</h3>
 
+                <div className="carousel">
+                <Carousel />
+                </div>
+                
+                <div id="container-wrapper">
                 <div id="container">
-                    
+                
                 </div>
 
-                <table className="table table-striped" style={{ marginTop: 20 }}>
+                <table className="table table-striped" style={{ marginTop: 30 }}>
                     <thead>
                         <tr>
-                            <th>Description</th>
-                            <th>Responsible</th>
-                            <th>Priority</th>
+                            <th>Game Name</th>
+                            <th>Game Type</th>
+                            <th>Favoritism</th>
                             <th>Actions</th>
+                            {/* <th><DeleteBtn/></th> */}
                         </tr>
                     </thead>
                     <tbody>
@@ -70,7 +85,7 @@ export default class TodosList extends Component {
                     </tbody>
                 </table>
             </div>
-            
+            </div>  
         )
     }
 }

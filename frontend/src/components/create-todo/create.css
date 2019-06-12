@@ -1,0 +1,15 @@
+body {
+    color: white;
+}
+
+.form-group {
+    text-align: center;
+}
+
+label {
+    font-size: 1.5rem;
+}
+
+.form-control {
+    text-align: center;
+}

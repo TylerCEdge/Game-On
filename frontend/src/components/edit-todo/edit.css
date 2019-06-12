@@ -1,0 +1,27 @@
+form {
+    font-family: 'Orbitron', sans-serif;
+    padding: 20px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: slategray;
+    width: 95%;
+    margin: auto;
+    justify-content: center;
+}
+
+.form-group {
+    text-align: center;
+}
+
+.form-check-label {
+    font-size: 1rem;
+}
+
+label {
+    font-size: 1.5rem;
+}
+
+.form-control {
+    text-align: center;
+}
+

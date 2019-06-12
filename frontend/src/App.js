@@ -13,24 +13,25 @@ class App extends Component {
   render() {
     return (
       <Router>
+        <div className="navbar-wrapper">
         <div className="container">
           <nav className="navbar navbar-expand-lg">
             <a
               className="navbar-brand"
-              href="https://codingthesmartway.com"
+              href="https://www.google.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={logo} width="50" height="50" alt="Your A Wizard" />
+              <img src={logo} width="50" height="50" alt="Logo" />
             </a>
             <Link to="/" className="navbar-brand">
-              G a m e r F i x
+              G a m e O n
             </Link>
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav mr-auto">
                 <li className="navbar-item">
                   <Link to="/" className="nav-link one">
-                    Search
+                    Home
                   </Link>
                 </li>
                 <li className="navbar-item">
@@ -41,9 +42,7 @@ class App extends Component {
               </ul>
             </div>
           </nav>
-
-          
-
+          </div>
           <Route path="/" exact component={TodosList} />
           <Route path="/carousel" exact component={Carousel} />
           <Route path="/edit/:id" exact component={EditTodo} />
