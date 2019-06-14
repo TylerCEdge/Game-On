@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import "./list.css";
-import Carousel from '../new-release/new-release';
-
+import Image from "./Image.js"
 const Game = props => (
     <tr>
         <td>{props.game.name}</td>
@@ -37,7 +36,7 @@ export default class GamesList extends Component {
     render() {
         return (
             <>
-                <Carousel />
+                <Image />
 
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
