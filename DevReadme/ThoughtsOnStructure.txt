@@ -1,0 +1,11 @@
+structured out collection of resources,
+ frontend and backup
+  -> what needs to be done
+  -> what each person has accomplished
+  -> links to resources that are used/could be implemented
+  -> 
+
+
+side note
+ uninstalled js hacker pack
+ diabled markdown AIO
