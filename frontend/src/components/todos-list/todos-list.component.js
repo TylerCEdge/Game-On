@@ -1,4 +1,7 @@
-import React, { Component } from 'react';
+// We should break out these components into separate files
+import React, {
+    Component
+} from 'react';
 import axios from 'axios';
 import "./list.css";
 import Carousel from '../new-release/new-release';
@@ -6,7 +9,9 @@ import Carousel from '../new-release/new-release';
 class Img extends Component {
     constructor(props) {
         super(props)
-        this.state = { src: "" }
+        this.state = {
+            src: ""
+        }
     }
 
     componentWillMount() {
@@ -16,82 +21,161 @@ class Img extends Component {
     getImageId() {
         axios.get(`http://localhost:4000/api/images/${this.props.src}`)
             .then(response => {
-                console.log(response)
-                this.setState({ src: response.data })
+                this.setState({
+                    src: response.data
+                })
             })
             .catch(err => console.log(err))
     }
     render() {
-        return (
-            <img
-                src={this.state.src}
-                alt={this.props.alt}
-                style={{
+        return ( <
+            img src = {
+                this.state.src
+            }
+            alt = {
+                this.props.alt
+            }
+            style = {
+                {
                     height: "150px",
                     width: "200px",
                     borderRadius: "10px"
-                }}
+                }
+            }
             />
         )
     }
 }
 
-const Game = props => (
-    <tr>
-        <td>
-            <Img
-                src={props.game.cover}
-                alt={props.game.name}
-            />
-        </td>
-        <td>{props.game.name}</td>
-        <td>{props.game.summary}</td>
-        <td>{props.game.popularity}</td>
-    </tr>
+const Game = props => ( <
+    tr >
+    <
+    td >
+    <
+    Img src = {
+        props.game.cover
+    }
+    alt = {
+        props.game.name
+    }
+    /> < /
+    td > <
+    td > {
+        props.game.name
+    } < /td> <
+    td > {
+        props.game.summary
+    } < /td> <
+    td > {
+        props.game.popularity
+    } < /td> < /
+    tr >
 )
 
 export default class GamesList extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { games: [] };
+        this.state = {
+            games: [],
+            query: "Mario",
+            value: ''
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+
+    }
+
+    handleChange(event) {
+        this.setState({
+            value: event.target.value
+        });
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        this.setState({
+            query: this.state.value
+        })
+        this.gameList()
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/api/popular/')
+        axios.get(`http://localhost:4000/api/games/${this.state.query}`)
             .then(response => {
-                this.setState({ games: response.data });
+                console.log(response.data)
+                this.setState({
+                    games: response.data
+                });
             })
-            .catch(function (error) {
+            .catch(function(error) {
                 console.log(error);
             })
     }
-
     gameList() {
-        return this.state.games.map(function (game, i) {
-            return <Game game={game} key={i} />;
+        return this.state.games.map(function(game, i) {
+            return <Game game = {
+                game
+            }
+            key = {
+                i
+            }
+            />;
         })
     }
 
     render() {
-        return (
-            <>
-                <Carousel />
+        return ( <
+            >
+            <
+            Carousel / >
 
-                <table className="table table-striped" style={{ marginTop: 20 }}>
-                    <thead>
-                        <tr>
-                            <th>Cover</th>
-                            <th>Name</th>
-                            <th>Summary</th>
-                            <th>Rating</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.gameList()}
-                    </tbody>
-                </table>
-            </>
+            <
+            form onSubmit = {
+                this.handleSubmit
+            } >
+            <
+            label >
+            Search:
+            <
+            input type = "text"
+            value = {
+                this.state.value
+            }
+            onChange = {
+                this.handleChange
+            }
+            /> < /
+            label > <
+            input type = "submit"
+            value = "Submit" / >
+            <
+            /form>
+
+            <
+            table className = "table table-striped"
+            style = {
+                {
+                    marginTop: 20
+                }
+            } >
+            <
+            thead >
+            <
+            tr >
+            <
+            th > Cover < /th> <
+            th > Name < /th> <
+            th > Summary < /th> <
+            th > Rating < /th> < /
+            tr > <
+            /thead> <
+            tbody > {
+                this.gameList()
+            } <
+            /tbody> < /
+            table > <
+            />
         )
     }
 }
