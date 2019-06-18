@@ -11,7 +11,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/TylerCEdge/project-3">
-    <img src="logo.png" alt="Logo" width="80" height="80">
+    <img src="https://github.com/TylerCEdge/project-3/blob/master/frontend/src/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">The aMeizing Rejects</h3>
@@ -44,7 +44,7 @@
 
 ## About The Project
 
-[![G A M E O N][product-screenshot]](https://imgur.com/a/r0aXgWx)
+[![G A M E O N][product-screenshot]](https://github.com/TylerCEdge/project-3/blob/master/DevReadme/FrontEnd/UI/productScreenShot.png)
 
 <!--!!!!!!add deployed link here!!!!!!-->
 
@@ -165,4 +165,4 @@ Project Link: [https://github.com/TylerCEdge/project-3](https://github.com/Tyler
 [contributors-shield]: https://img.shields.io/badge/contributors-5-orange.svg?style=flat-square
 [license-shield]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
 [license-url]: https://choosealicense.com/licenses/mit
-[product-screenshot]: https://raw.githubusercontent.com/othneildrew/Best-README-Template/master/screenshot.png
+[product-screenshot]: https://github.com/TylerCEdge/project-3/blob/master/DevReadme/FrontEnd/UI/productScreenShot.png
