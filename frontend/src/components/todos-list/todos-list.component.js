@@ -14,6 +14,7 @@ class Img extends Component {
         }
     }
 
+
     componentWillMount() {
         this.getImageId();
     }
@@ -90,6 +91,9 @@ export default class GamesList extends Component {
         this.setState({
             value: event.target.value
         });
+        this.setState({
+            value: event.target.value
+        });
     }
 
     handleSubmit(event) {
@@ -104,6 +108,9 @@ export default class GamesList extends Component {
         axios.get(`http://localhost:4000/api/games/${this.state.query}`)
             .then(response => {
                 console.log(response.data)
+                this.setState({
+                    games: response.data
+                });
                 this.setState({
                     games: response.data
                 });
@@ -176,6 +183,57 @@ export default class GamesList extends Component {
             /tbody> < /
             table > <
             />
-        )
+            return ( <
+                >
+                <
+                Carousel / >
+
+                <
+                form onSubmit = {
+                    this.handleSubmit
+                } >
+                <
+                label >
+                Search:
+                <
+                input type = "text"
+                value = {
+                    this.state.value
+                }
+                onChange = {
+                    this.handleChange
+                }
+                /> < /
+                label > <
+                input type = "submit"
+                value = "Submit" / >
+                <
+                /form>
+
+                <
+                table className = "table table-striped"
+                style = {
+                    {
+                        marginTop: 20
+                    }
+                } >
+                <
+                thead >
+                <
+                tr >
+                <
+                th > Cover < /th> <
+                th > Name < /th> <
+                th > Summary < /th> <
+                th > Rating < /th> < /
+                tr > <
+                /thead> <
+                tbody > {
+                    this.gameList()
+                } <
+                /tbody> < /
+                table > <
+                />
+            )
+        }
     }
-}
