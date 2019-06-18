@@ -42,12 +42,11 @@ class App extends Component {
                 </ul>
               </div>
             </nav>
-
-            <Route path="/" exact component={TodosList} />
-            <Route path="/carousel" exact component={Carousel} />
-            <Route path="/edit/:id" exact component={EditTodo} />
-            <Route path="/create" exact component={CreateTodo} />
           </div>
+          <Route path="/" exact component={TodosList} />
+          <Route path="/carousel" exact component={Carousel} />
+          <Route path="/edit/:id" exact component={EditTodo} />
+          <Route path="/create" exact component={CreateTodo} />
         </div>
       </Router>
     );

@@ -4,10 +4,13 @@ import "./list.css";
 import Image from "./Image.js"
 const Game = props => (
     <tr>
+        <td><img
+            src={`https://images.igdb.com/igdb/image/upload/t_logo_med_2x/${props.game.cover.cloudinary}.png`}
+            alt={props.game.name}></img></td>
         <td>{props.game.name}</td>
         <td>{props.game.summary}</td>
         <td>{props.game.popularity}</td>
-    </tr>
+    </tr >
 )
 
 export default class GamesList extends Component {
@@ -41,6 +44,7 @@ export default class GamesList extends Component {
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
                         <tr>
+                            <th>Cover</th>
                             <th>Name</th>
                             <th>Summary</th>
                             <th>Rating</th>
