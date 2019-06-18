@@ -1,3 +1,4 @@
+// We should break out these components into separate files
 import React, { Component } from 'react';
 import axios from 'axios';
 import "./list.css";
@@ -9,6 +10,7 @@ class Img extends Component {
         this.state = { src: "" }
     }
 
+
     componentWillMount() {
         this.getImageId();
     }
@@ -16,7 +18,6 @@ class Img extends Component {
     getImageId() {
         axios.get(`http://localhost:4000/api/images/${this.props.src}`)
             .then(response => {
-                console.log(response)
                 this.setState({ src: response.data })
             })
             .catch(err => console.log(err))
@@ -54,19 +55,38 @@ export default class GamesList extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { games: [] };
+        this.state = {
+            games: [],
+            query: "Mario",
+            value: ''
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+
+    }
+
+    handleChange(event) {
+        this.setState({ value: event.target.value });
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        this.setState({
+            query: this.state.value
+        })
+        this.gameList()
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/api/popular/')
+        axios.get(`http://localhost:4000/api/games/${this.state.query}`)
             .then(response => {
+                console.log(response.data)
                 this.setState({ games: response.data });
             })
             .catch(function (error) {
                 console.log(error);
             })
     }
-
     gameList() {
         return this.state.games.map(function (game, i) {
             return <Game game={game} key={i} />;
@@ -77,6 +97,14 @@ export default class GamesList extends Component {
         return (
             <>
                 <Carousel />
+
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                        Search:
+                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                    </label>
+                    <input type="submit" value="Submit" />
+                </form>
 
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
@@ -95,3 +123,4 @@ export default class GamesList extends Component {
         )
     }
 }
+
