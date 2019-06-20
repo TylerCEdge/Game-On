@@ -1,5 +1,7 @@
 .carousel-img {
-    width: 99%;
-    max-height: 500px;
+    width: 80%;
+    max-height: 450px;
     border-radius: 5px;
+    margin: auto;
+    justify-content: center;
 }

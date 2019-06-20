@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import "./list.css";
 import Carousel from '../new-release/new-release';
+import ComingSoon from '../coming-soon/coming-soon';
 
 class Img extends Component {
     constructor(props) {
@@ -77,6 +78,7 @@ export default class GamesList extends Component {
         return (
             <>
                 <Carousel />
+                <ComingSoon />
 
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
