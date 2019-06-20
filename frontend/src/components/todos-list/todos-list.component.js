@@ -14,8 +14,10 @@ class Img extends Component {
         }
     }
 
-
-    componentWillMount() {
+    componentDidUpdate() {
+        this.getImageId();
+    }
+    componentDidMount() {
         this.getImageId();
     }
 
@@ -96,15 +98,20 @@ export default class GamesList extends Component {
         });
     }
 
-    handleSubmit(event) {
+    async handleSubmit(event) {
         event.preventDefault();
-        this.setState({
-            query: this.state.value
+        await this.setState({
+            query: this.state.value,
+            value: ''
         })
-        this.gameList()
+        this.getGames()
     }
 
     componentDidMount() {
+        this.getGames();
+    }
+
+    getGames() {
         axios.get(`http://localhost:4000/api/games/${this.state.query}`)
             .then(response => {
                 console.log(response.data)
@@ -119,6 +126,7 @@ export default class GamesList extends Component {
                 console.log(error);
             })
     }
+
     gameList() {
         return this.state.games.map(function(game, i) {
             return <Game game = {
