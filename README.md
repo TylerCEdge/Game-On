@@ -86,6 +86,7 @@ Here is a list of packages and libraries necessary to run this app on a local ma
 ```sh
 npm install npm@latest -g
 ```
+_must npm install inside root directory as well as frontend directory_
 
 - MongoDB
 
