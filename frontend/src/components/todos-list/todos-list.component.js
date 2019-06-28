@@ -51,29 +51,15 @@ class Img extends Component {
     }
 }
 
-const Game = props => ( <
-    tr >
-    <
-    td >
-    <
-    Img src = {
-        props.game.cover
-    }
-    alt = {
-        props.game.name
-    }
-    /> < /
-    td > <
-    td > {
-        props.game.name
-    } < /td> <
-    td > {
-        props.game.summary
-    } < /td> <
-    td > {
-        props.game.popularity
-    } < /td> < /
-    tr >
+const Game = props => ( 
+<tr>
+    <td>
+    <Img src = {props.game.cover}
+    alt = {props.game.name}/></td> 
+    <td> {props.game.name} </td> 
+    <td> {props.game.summary} </td> 
+    <td> {props.game.popularity} </td>
+</tr >
 )
 
 export default class GamesList extends Component {
