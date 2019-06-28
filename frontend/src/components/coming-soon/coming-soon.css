@@ -36,3 +36,8 @@
     width: 275px;
     align-content: top;
 }
+
+.popover-header {
+    color: black;
+}
+
