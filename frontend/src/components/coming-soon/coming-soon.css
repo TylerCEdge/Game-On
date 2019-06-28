@@ -41,3 +41,13 @@
     color: black;
 }
 
+.moreInfo {
+    color: rgba(145, 18, 18);
+    text-decoration: none;
+    font-size: 110%;
+    font-weight: bold;
+}
+
+.moreInfo:hover{
+    color: slategray;
+}
