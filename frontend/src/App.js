@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <Router>
         <div className="navbar-wrapper">
-          <div className="container">
+          <div className="main-container">
             <nav className="navbar navbar-expand-lg">
               <a
                 className="navbar-brand"

@@ -5,6 +5,7 @@ import React, {
 import axios from 'axios';
 import "./list.css";
 import Carousel from '../new-release/new-release';
+import ComingSoon from '../coming-soon/coming-soon';
 
 class Img extends Component {
     constructor(props) {
@@ -140,108 +141,25 @@ export default class GamesList extends Component {
     }
 
     render() {
-        return ( <
-            >
-            <
-            Carousel / >
+        return (
+            <>
+                <Carousel />
+                <ComingSoon />
 
-            <
-            form onSubmit = {
-                this.handleSubmit
-            } >
-            <
-            label >
-            Search:
-            <
-            input type = "text"
-            value = {
-                this.state.value
-            }
-            onChange = {
-                this.handleChange
-            }
-            /> < /
-            label > <
-            input type = "submit"
-            value = "Submit" / >
-            <
-            /form>
-
-            <
-            table className = "table table-striped"
-            style = {
-                {
-                    marginTop: 20
-                }
-            } >
-            <
-            thead >
-            <
-            tr >
-            <
-            th > Cover < /th> <
-            th > Name < /th> <
-            th > Summary < /th> <
-            th > Rating < /th> < /
-            tr > <
-            /thead> <
-            tbody > {
-                this.gameList()
-            } <
-            /tbody> < /
-            table > <
-            />
-            return ( <
-                >
-                <
-                Carousel / >
-
-                <
-                form onSubmit = {
-                    this.handleSubmit
-                } >
-                <
-                label >
-                Search:
-                <
-                input type = "text"
-                value = {
-                    this.state.value
-                }
-                onChange = {
-                    this.handleChange
-                }
-                /> < /
-                label > <
-                input type = "submit"
-                value = "Submit" / >
-                <
-                /form>
-
-                <
-                table className = "table table-striped"
-                style = {
-                    {
-                        marginTop: 20
-                    }
-                } >
-                <
-                thead >
-                <
-                tr >
-                <
-                th > Cover < /th> <
-                th > Name < /th> <
-                th > Summary < /th> <
-                th > Rating < /th> < /
-                tr > <
-                /thead> <
-                tbody > {
-                    this.gameList()
-                } <
-                /tbody> < /
-                table > <
-                />
-            )
-        }
+                <table className="table table-striped" style={{ marginTop: 20 }}>
+                    <thead>
+                        <tr>
+                            <th>Cover</th>
+                            <th>Name</th>
+                            <th>Summary</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.gameList()}
+                    </tbody>
+                </table>
+            </>
+        )
     }
+}
