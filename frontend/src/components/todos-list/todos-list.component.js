@@ -7,16 +7,26 @@ import Carousel from '../new-release/new-release';
 class Img extends Component {
     constructor(props) {
         super(props)
-        this.state = { src: "" }
+        this.state = {
+            id: this.props.src,
+            src: ""
+        }
     }
 
-    componentDidUpdate() {
-        this.getImageId();
-    }
-    componentDidMount() {
-        this.getImageId();
+
+    componentDidUpdate(props) {
+        const { src } = this.props;
+        if (src !== this.state.id) {
+            this.getImageId()
+        }
     }
 
+    componentDidMount(props) {
+        const { src } = this.props;
+        if (src !== this.state.id) {
+            this.getImageId()
+        }
+    }
     getImageId() {
         axios.get(`http://localhost:4000/api/images/${this.props.src}`)
             .then(response => {
