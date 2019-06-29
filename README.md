@@ -111,6 +111,13 @@ npm install
 
 4. Start Local Servers
 
+  _from main directory_ 
+
+```sh
+- npm run client
+
+```
+  _from sub-directories_
 ```sh
 - Backend: node server.js
 - Frontend: yarn start
