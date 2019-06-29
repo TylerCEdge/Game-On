@@ -12,19 +12,15 @@ module.exports = function (app) { //passing in express from server.js as app
       url: "https://api-v3.igdb.com/games",
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
+        Accept: 'application/json',
         'user-key': process.env.IGDB_KEY
       },
-      data: `fields *; search "${req.params.game}"; limit 20;`
+      data: `fields *; search "${req.params.game}"; limit 1;`
     })
       .then(response => {
         console.log(response.data)
         res.send(response.data)
       })
-      .catch(err => {
-        console.error(err);
-      });
-
   });
 
   // Gets game artwork image url
@@ -33,16 +29,13 @@ module.exports = function (app) { //passing in express from server.js as app
       url: "https://api-v3.igdb.com/covers",
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
+        Accept: 'application/json',
         'user-key': process.env.IGDB_KEY
       },
-      data: `fields alpha_channel,animated,game,height,image_id,url,width; where id = ${req.params.id};`
+      data: `fields alpha_channel,animated,game,height,image_id,url,width; where id = ${req.params.id}; limit 1;`
     })
       .then(response => {
         res.send(`https://images.igdb.com/igdb/image/upload/t_logo_med_2x/${response.data[0].image_id}.png`)
       })
-      .catch(err => {
-        // console.error(err);
-      });
   })
 }
