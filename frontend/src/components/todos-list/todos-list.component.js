@@ -5,6 +5,7 @@ import React, {
 import axios from 'axios';
 import "./list.css";
 import Carousel from '../new-release/new-release';
+import ComingSoon from '../coming-soon/coming-soon';
 
 class Img extends Component {
     constructor(props) {
@@ -50,29 +51,15 @@ class Img extends Component {
     }
 }
 
-const Game = props => ( <
-    tr >
-    <
-    td >
-    <
-    Img src = {
-        props.game.cover
-    }
-    alt = {
-        props.game.name
-    }
-    /> < /
-    td > <
-    td > {
-        props.game.name
-    } < /td> <
-    td > {
-        props.game.summary
-    } < /td> <
-    td > {
-        props.game.popularity
-    } < /td> < /
-    tr >
+const Game = props => ( 
+<tr>
+    <td>
+    <Img src = {props.game.cover}
+    alt = {props.game.name}/></td> 
+    <td> {props.game.name} </td> 
+    <td> {props.game.summary} </td> 
+    <td> {props.game.popularity} </td>
+</tr >
 )
 
 export default class GamesList extends Component {
@@ -140,108 +127,25 @@ export default class GamesList extends Component {
     }
 
     render() {
-        return ( <
-            >
-            <
-            Carousel / >
+        return (
+            <>
+                <Carousel />
+                <ComingSoon />
 
-            <
-            form onSubmit = {
-                this.handleSubmit
-            } >
-            <
-            label >
-            Search:
-            <
-            input type = "text"
-            value = {
-                this.state.value
-            }
-            onChange = {
-                this.handleChange
-            }
-            /> < /
-            label > <
-            input type = "submit"
-            value = "Submit" / >
-            <
-            /form>
-
-            <
-            table className = "table table-striped"
-            style = {
-                {
-                    marginTop: 20
-                }
-            } >
-            <
-            thead >
-            <
-            tr >
-            <
-            th > Cover < /th> <
-            th > Name < /th> <
-            th > Summary < /th> <
-            th > Rating < /th> < /
-            tr > <
-            /thead> <
-            tbody > {
-                this.gameList()
-            } <
-            /tbody> < /
-            table > <
-            />
-            return ( <
-                >
-                <
-                Carousel / >
-
-                <
-                form onSubmit = {
-                    this.handleSubmit
-                } >
-                <
-                label >
-                Search:
-                <
-                input type = "text"
-                value = {
-                    this.state.value
-                }
-                onChange = {
-                    this.handleChange
-                }
-                /> < /
-                label > <
-                input type = "submit"
-                value = "Submit" / >
-                <
-                /form>
-
-                <
-                table className = "table table-striped"
-                style = {
-                    {
-                        marginTop: 20
-                    }
-                } >
-                <
-                thead >
-                <
-                tr >
-                <
-                th > Cover < /th> <
-                th > Name < /th> <
-                th > Summary < /th> <
-                th > Rating < /th> < /
-                tr > <
-                /thead> <
-                tbody > {
-                    this.gameList()
-                } <
-                /tbody> < /
-                table > <
-                />
-            )
-        }
+                <table className="table table-striped" style={{ marginTop: 20 }}>
+                    <thead>
+                        <tr>
+                            <th>Cover</th>
+                            <th>Name</th>
+                            <th>Summary</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.gameList()}
+                    </tbody>
+                </table>
+            </>
+        )
     }
+}
