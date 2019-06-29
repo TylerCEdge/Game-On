@@ -1,19 +1,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let Todo = new Schema({
-    todo_description: {
+let gameOnSchema = new Schema({
+    game_name: {
         type: String
     },
-    todo_responsible: {
+    game_type: {
         type: String
     },
-    todo_priority: {
+    favoritism: {
         type: String
-    },
-    todo_completed: {
-        type: Boolean
     }
 });
 
-module.exports = mongoose.model('Todo', Todo);
+module.exports = mongoose.model('gameOnSchema', gameOnSchema);

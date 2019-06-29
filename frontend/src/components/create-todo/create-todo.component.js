@@ -7,34 +7,33 @@ export default class CreateTodo extends Component {
     constructor(props) {
         super(props);
 
-        this.onChangeTodoDescription = this.onChangeTodoDescription.bind(this);
-        this.onChangeTodoResponsible = this.onChangeTodoResponsible.bind(this);
-        this.onChangeTodoPriority = this.onChangeTodoPriority.bind(this);
+        this.onChangeGameName = this.onChangeGameName.bind(this);
+        this.onChangeGameType = this.onChangeGameType.bind(this);
+        this.onChangeFavoritism = this.onChangeFavoritism.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
-            todo_description: '',
-            todo_responsible: '',
-            todo_priority: '',
-            todo_completed: false
+            game_name: '',
+            game_type: '',
+            favoritism: ''
         }
     }
 
-    onChangeTodoDescription(e) {
+    onChangeGameName(e) {
         this.setState({
-            todo_description: e.target.value
+            game_name: e.target.value
         });
     }
 
-    onChangeTodoResponsible(e) {
+    onChangeGameType(e) {
         this.setState({
-            todo_responsible: e.target.value
+            game_type: e.target.value
         });
     }
 
-    onChangeTodoPriority(e) {
+    onChangeFavoritism(e) {
         this.setState({
-            todo_priority: e.target.value
+            favoritism: e.target.value
         });
     }
 
@@ -42,26 +41,24 @@ export default class CreateTodo extends Component {
         e.preventDefault();
 
         console.log(`Form submitted:`);
-        console.log(`Todo Description: ${this.state.todo_description}`);
-        console.log(`Todo Responsible: ${this.state.todo_responsible}`);
-        console.log(`Todo Priority: ${this.state.todo_priority}`);
-        console.log(`Todo Completed: ${this.state.todo_completed}`);
+        console.log(`Game Name: ${this.state.game_name}`);
+        console.log(`Game Type: ${this.state.game_type}`);
+        console.log(`Favoritism: ${this.state.favoritism}`);
+        
 
         const newTodo = {
-            todo_description: this.state.todo_description,
-            todo_responsible: this.state.todo_responsible,
-            todo_priority: this.state.todo_priority,
-            todo_completed: this.state.todo_completed
+            game_name: this.state.game_name,
+            game_type: this.state.game_type,
+            favoritism: this.state.favoritism,
         }
 
         axios.post('http://localhost:4000/todos/add', newTodo)
             .then(res => console.log(res.data));
 
         this.setState({
-            todo_description: '',
-            todo_responsible: '',
-            todo_priority: '',
-            todo_completed: false
+            game_name: '',
+            game_type: '',
+            favoritism: ''
         })
     }
 
@@ -75,16 +72,16 @@ export default class CreateTodo extends Component {
                         <label>Game Name </label>
                         <input  type="text"
                                 className="form-control"
-                                value={this.state.todo_description}
-                                onChange={this.onChangeTodoDescription}
+                                value={this.state.game_name}
+                                onChange={this.onChangeGameName}
                                 />
                     </div>
                     <div className="form-group">
                         <label>Game Type </label>
                         <input  type="text"
                                 className="form-control"
-                                value={this.state.todo_responsible}
-                                onChange={this.onChangeTodoResponsible}
+                                value={this.state.game_type}
+                                onChange={this.onChangeGameType}
                                 />
                     </div>
                     <div className="form-group">
@@ -97,8 +94,8 @@ export default class CreateTodo extends Component {
                                     name="priorityOptions"
                                     id="priorityLow"
                                     value="Low"
-                                    checked={this.state.todo_priority==='Low'}
-                                    onChange={this.onChangeTodoPriority}
+                                    checked={this.state.favoritism==='Low'}
+                                    onChange={this.onChangeFavoritism}
                                     />
                             <label className="form-check-label">Low</label>
                         </div>
@@ -108,8 +105,8 @@ export default class CreateTodo extends Component {
                                     name="priorityOptions"
                                     id="priorityMedium"
                                     value="Medium"
-                                    checked={this.state.todo_priority==='Medium'}
-                                    onChange={this.onChangeTodoPriority}
+                                    checked={this.state.favoritism==='Medium'}
+                                    onChange={this.onChangeFavoritism}
                                     />
                             <label className="form-check-label">Medium</label>
                         </div>
@@ -119,8 +116,8 @@ export default class CreateTodo extends Component {
                                     name="priorityOptions"
                                     id="priorityHigh"
                                     value="High"
-                                    checked={this.state.todo_priority==='High'}
-                                    onChange={this.onChangeTodoPriority}
+                                    checked={this.state.favoritism==='High'}
+                                    onChange={this.onChangeFavoritism}
                                     />
                             <label className="form-check-label">High</label>
                         </div>
