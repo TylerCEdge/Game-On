@@ -4,8 +4,6 @@ import React, {
 } from 'react';
 import axios from 'axios';
 import "./list.css";
-import Carousel from '../new-release/new-release';
-import ComingSoon from '../coming-soon/coming-soon';
 
 class Img extends Component {
     constructor(props) {
@@ -15,9 +13,15 @@ class Img extends Component {
         }
     }
 
-    componentDidUpdate() {
-        this.getImageId();
-    }
+    componentDidUpdate(prevProps){
+        if(this.props.src !== prevProps.src){
+           this.getImageId()
+        }
+     }
+
+    // componentDidUpdate() {
+    //     this.getImageId();
+    // }
     componentDidMount() {
         this.getImageId();
     }
@@ -25,6 +29,7 @@ class Img extends Component {
     getImageId() {
         axios.get(`http://localhost:4000/api/images/${this.props.src}`)
             .then(response => {
+                console.log(response.data)
                 this.setState({
                     src: response.data
                 })
@@ -32,8 +37,7 @@ class Img extends Component {
             .catch(err => console.log(err))
     }
     render() {
-        return ( <
-            img src = {
+        return ( <img src = {
                 this.state.src
             }
             alt = {
@@ -68,7 +72,7 @@ export default class GamesList extends Component {
         super(props);
         this.state = {
             games: [],
-            query: "Mario",
+            query: "",
             value: ''
         };
         this.handleChange = this.handleChange.bind(this);
@@ -77,9 +81,6 @@ export default class GamesList extends Component {
     }
 
     handleChange(event) {
-        this.setState({
-            value: event.target.value
-        });
         this.setState({
             value: event.target.value
         });
@@ -105,9 +106,6 @@ export default class GamesList extends Component {
                 this.setState({
                     games: response.data
                 });
-                this.setState({
-                    games: response.data
-                });
             })
             .catch(function(error) {
                 console.log(error);
@@ -128,24 +126,31 @@ export default class GamesList extends Component {
 
     render() {
         return (
-            <>
-                <Carousel />
-                <ComingSoon />
+            <div>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Search:
+            <input
+              type="text"
+              value={this.state.value}
+              onChange={this.handleChange}
+            />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
 
-                <table className="table table-striped" style={{ marginTop: 20 }}>
-                    <thead>
-                        <tr>
-                            <th>Cover</th>
-                            <th>Name</th>
-                            <th>Summary</th>
-                            <th>Rating</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.gameList()}
-                    </tbody>
-                </table>
-            </>
+        <table className="table table-striped" style={{ marginTop: 20 }}>
+          <thead>
+            <tr>
+              <th>Cover</th>
+              <th>Name</th>
+              <th>Summary</th>
+              <th>Rating</th>
+            </tr>
+          </thead>
+          <tbody>{this.gameList()}</tbody>
+        </table>
+      </div>
         )
     }
 }
