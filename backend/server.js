@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const databaseRoutes = 'express.Router()'
 // let Todo = require('./todo.model');
 
-let gameOnDB = reqiure('./todo.model')
+let gameOnDB = require('./todo.model')
 
 app.use(cors());
 app.use(bodyParser.json());
