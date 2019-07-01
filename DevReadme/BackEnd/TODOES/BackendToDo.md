@@ -23,4 +23,4 @@ _items Completed_
 _Items to do_
 
 2. Decide on Authentication
-3. 
+3. Clean up code
