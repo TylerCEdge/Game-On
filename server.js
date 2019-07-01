@@ -5,12 +5,9 @@ const mongoose = require('mongoose');
 const logger = require('morgan')
 const path = require('path')
 
-require("dotenv").config()
-
 const app = express();
 
 const PORT = process.env.PORT || 4000;
-// let Todo = require('./todo.model');
 
 app.use(cors());
 app.use(bodyParser.json());
