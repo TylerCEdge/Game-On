@@ -1,6 +1,7 @@
-require('dotenv').config();
+const config = require('config')
+const key = config.get("IGDB_KEY")
 const axios = require('axios');
-let results = [];
+
 
 
 module.exports = function (app) { //passing in express from server.js as app
@@ -14,7 +15,7 @@ module.exports = function (app) { //passing in express from server.js as app
       method: 'POST',
       headers: {
         Accept: 'application/json',
-        'user-key': process.env.IGDB_KEY
+        'user-key': key
       },
       data: `fields *; search "${req.params.game}"; limit 5;`
     })
@@ -32,7 +33,7 @@ module.exports = function (app) { //passing in express from server.js as app
       method: 'POST',
       headers: {
         Accept: 'application/json',
-        'user-key': process.env.IGDB_KEY
+        'user-key': key
       },
       data: `fields alpha_channel,animated,game,height,image_id,url,width; where id = ${req.params.id}; limit 5;`
     })
