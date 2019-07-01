@@ -163,7 +163,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Team UnAmeiezed' - [Who's Ameizing](https://i.imgur.com/a6hu0Bx.mp4) - unameized@gmail.com
+Team UnAmeiezed - [Who's Ameizing](https://i.imgur.com/a6hu0Bx.mp4) - unameized@gmail.com
 
 Project Link: [https://github.com/TylerCEdge/project-3](https://github.com/TylerCEdge/project-3)
 
