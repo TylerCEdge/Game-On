@@ -1,5 +1,3 @@
 {
-  "mongoURI": "mongodb://testing:t123456@ds129045.mlab.com:29045/heroku_pnnff4z2",
-  "jwtSecret": "sl_myJwtSecret",
   "IGDB_KEY": "8483d84675a01d21a9e212437153bf8e"
 }
