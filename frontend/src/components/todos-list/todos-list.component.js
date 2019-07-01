@@ -5,6 +5,9 @@ import React, {
 import axios from 'axios';
 import "./list.css";
 
+import Carousel from '../new-release/new-release';
+import ComingSoon from '../coming-soon/coming-soon';
+
 class Img extends Component {
     constructor(props) {
         super(props)
@@ -13,11 +16,11 @@ class Img extends Component {
         }
     }
 
-    componentDidUpdate(prevProps){
-        if(this.props.src !== prevProps.src){
-           this.getImageId()
+    componentDidUpdate(prevProps) {
+        if (this.props.src !== prevProps.src) {
+            this.getImageId()
         }
-     }
+    }
 
     // componentDidUpdate() {
     //     this.getImageId();
@@ -37,33 +40,33 @@ class Img extends Component {
             .catch(err => console.log(err))
     }
     render() {
-        return ( <img src = {
-                this.state.src
-            }
-            alt = {
+        return (<img src={
+            this.state.src
+        }
+            alt={
                 this.props.alt
             }
-            style = {
+            style={
                 {
                     height: "150px",
                     width: "200px",
                     borderRadius: "10px"
                 }
             }
-            />
+        />
         )
     }
 }
 
-const Game = props => ( 
-<tr>
-    <td>
-    <Img src = {props.game.cover}
-    alt = {props.game.name}/></td> 
-    <td> {props.game.name} </td> 
-    <td> {props.game.summary} </td> 
-    <td> {props.game.popularity} </td>
-</tr >
+const Game = props => (
+    <tr>
+        <td>
+            <Img src={props.game.cover}
+                alt={props.game.name} /></td>
+        <td> <a href={props.game.url}>{props.game.name}</a> </td>
+        <td> {props.game.summary} </td>
+        <td> {props.game.popularity} </td>
+    </tr >
 )
 
 export default class GamesList extends Component {
@@ -107,19 +110,19 @@ export default class GamesList extends Component {
                     games: response.data
                 });
             })
-            .catch(function(error) {
+            .catch(function (error) {
                 console.log(error);
             })
     }
 
     gameList() {
-        return this.state.games.map(function(game, i) {
-            return <Game game = {
+        return this.state.games.map(function (game, i) {
+            return <Game game={
                 game
             }
-            key = {
-                i
-            }
+                key={
+                    i
+                }
             />;
         })
     }
@@ -127,30 +130,34 @@ export default class GamesList extends Component {
     render() {
         return (
             <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Search:
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
 
-        <table className="table table-striped" style={{ marginTop: 20 }}>
-          <thead>
-            <tr>
-              <th>Cover</th>
-              <th>Name</th>
-              <th>Summary</th>
-              <th>Rating</th>
-            </tr>
-          </thead>
-          <tbody>{this.gameList()}</tbody>
-        </table>
-      </div>
+                <Carousel />
+                <ComingSoon />
+
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                        Search:
+            <input
+                            type="text"
+                            value={this.state.value}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                    <input type="submit" value="Submit" />
+                </form>
+
+                <table className="table table-striped" style={{ marginTop: 20 }}>
+                    <thead>
+                        <tr>
+                            <th>Cover</th>
+                            <th>Name</th>
+                            <th>Summary</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>{this.gameList()}</tbody>
+                </table>
+            </div>
         )
     }
 }

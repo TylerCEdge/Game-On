@@ -40,6 +40,5 @@ module.exports = function (app) { //passing in express from server.js as app
         res.json(`https://images.igdb.com/igdb/image/upload/t_logo_med_2x/${response.data[0].image_id}.png`)
         
       })
-      console.log(results)
   })
 }
