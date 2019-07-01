@@ -1,5 +1,3 @@
-const config = require('config')
-const key = config.get("IGDB_KEY")
 const axios = require('axios');
 
 
@@ -15,7 +13,7 @@ module.exports = function (app) { //passing in express from server.js as app
       method: 'POST',
       headers: {
         Accept: 'application/json',
-        'user-key': key
+        'user-key': process.env.IGDB_KEY
       },
       data: `fields *; search "${req.params.game}"; limit 5;`
     })
@@ -33,7 +31,7 @@ module.exports = function (app) { //passing in express from server.js as app
       method: 'POST',
       headers: {
         Accept: 'application/json',
-        'user-key': key
+        'user-key': process.env.IGDB_KEY
       },
       data: `fields alpha_channel,animated,game,height,image_id,url,width; where id = ${req.params.id}; limit 5;`
     })
