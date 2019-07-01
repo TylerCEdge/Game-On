@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const logger = require('morgan')
 const path = require('path')
 
+require("dotenv").config()
+
 const app = express();
 
 const PORT = process.env.PORT || 4000;
@@ -15,7 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(logger('dev'))
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/todos', { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/todos', { useNewUrlParser: true });
 const connection = mongoose.connection;
 
 connection.once('open', function () {
