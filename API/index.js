@@ -1,5 +1,6 @@
+require('dotenv').config();
 const axios = require('axios');
-
+let results = [];
 
 
 module.exports = function (app) { //passing in express from server.js as app
