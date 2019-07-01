@@ -14,9 +14,12 @@ class Img extends Component {
         }
     }
 
-    // componentDidUpdate() {
-    //     this.getImageId();
-    // }
+    componentDidUpdate(prevProps){
+        if(this.props.src !== prevProps.src){
+           this.getImageId()
+        }
+     }
+
     componentDidMount() {
         this.getImageId();
     }
