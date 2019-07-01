@@ -2,7 +2,7 @@
   "name": "gameonapp",
   "version": "1.0.0",
   "description": "Game app using IGDB for managing a wish/watch list for video games",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "node server.js",
