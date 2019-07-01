@@ -65,7 +65,7 @@ const Game = props => (
                 alt={props.game.name} /></td>
         <td> <a href={props.game.url}>{props.game.name}</a> </td>
         <td> {props.game.summary} </td>
-        <td> {props.game.popularity} </td>
+        <td> {Math.round(props.game.total_rating)} </td>
     </tr >
 )
 
