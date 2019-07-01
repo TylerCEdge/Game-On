@@ -18,9 +18,9 @@ _Items to do_
 ### Tyler
 
 _items Completed_
-
+1. Work on API looping error
 
 _Items to do_
-1. Work on API looping error
+
 2. Decide on Authentication
 3. 
