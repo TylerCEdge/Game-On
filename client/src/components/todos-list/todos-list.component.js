@@ -30,7 +30,7 @@ class Img extends Component {
     }
 
     getImageId() {
-        axios.get(`http://localhost:4000/api/images/${this.props.src}`)
+        axios.get(`/api/images/${this.props.src}`)
             .then(response => {
                 console.log(response.data)
                 this.setState({
@@ -103,7 +103,7 @@ export default class GamesList extends Component {
     }
 
     getGames() {
-        axios.get(`http://localhost:4000/api/games/${this.state.query}`)
+        axios.get(`/api/games/${this.state.query}`)
             .then(response => {
                 console.log(response.data)
                 this.setState({
