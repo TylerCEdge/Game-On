@@ -44,7 +44,7 @@
 
 ## About The Project
 
-[![G A M E O N][product-screenshot]](https://github.com/TylerCEdge/project-3/blob/master/DevReadme/FrontEnd/UI/07.01.19ui.png)
+[![G A M E O N][product-screenshot]](DevReadme/FrontEnd/UI/07.01.19ui.png)
 
 <!--!!!!!!add deployed link here!!!!!!-->
 
