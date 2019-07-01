@@ -17,12 +17,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(logger('dev'))
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/todos', { useNewUrlParser: true });
-const connection = mongoose.connection;
+var db = (process.env.MONGODB_URI || "mongodb://localhost/todos");
 
-connection.once('open', function () {
-    console.log("MongoDB database connection established successfully!");
-})
+mongoose.connect(db, { useNewUrlParser: true, useCreateIndex: true }, function (err) {
+  if (err) {
+    console.log(err);
+  }
+  else {
+    console.log("Mongoose connection is successful!");
+  }
+});
 
 // all api routes are in API folder
 require('./API')(app)
