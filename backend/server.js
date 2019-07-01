@@ -20,7 +20,13 @@ connection.once('open', function () {
 
 //calls app.use to pass to / 
 databaseRoutes.route('/').get(function(req, res){
-    gameOnDB.find(function(err, gameonSchema))
+    gameOnDB.find(function(err, gameonSchema) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.json()
+        }
+    })
 })
 
 //find page that this routes to...if still todo or is games or another name
