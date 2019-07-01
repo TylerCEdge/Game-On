@@ -15,9 +15,11 @@ class Img extends Component {
         }
     }
 
-    componentDidUpdate() {
-        this.getImageId();
-    }
+    // This was causing the repeated calls dont turn this back on.
+    // componentDidUpdate() {
+    //     this.getImageId();
+    // }
+    
     componentDidMount() {
         this.getImageId();
     }
@@ -32,8 +34,7 @@ class Img extends Component {
             .catch(err => console.log(err))
     }
     render() {
-        return ( <
-            img src = {
+        return ( <img src = {
                 this.state.src
             }
             alt = {
@@ -52,14 +53,29 @@ class Img extends Component {
 }
 
 const Game = props => ( 
-<tr>
+    <tr>
     <td>
-    <Img src = {props.game.cover}
-    alt = {props.game.name}/></td> 
-    <td> {props.game.name} </td> 
-    <td> {props.game.summary} </td> 
-    <td> {props.game.popularity} </td>
-</tr >
+    <Img src = {
+        props.game.cover
+    }
+    alt = {
+        props.game.name
+    }
+    /> 
+    </td> 
+    <td> {
+        props.game.name
+    } 
+    </td> 
+    <td > {
+        props.game.summary
+    } 
+    </td> 
+    <td> {
+        props.game.popularity
+    } 
+    </td> 
+    </tr>
 )
 
 export default class GamesList extends Component {
@@ -77,9 +93,6 @@ export default class GamesList extends Component {
     }
 
     handleChange(event) {
-        this.setState({
-            value: event.target.value
-        });
         this.setState({
             value: event.target.value
         });
@@ -127,25 +140,48 @@ export default class GamesList extends Component {
     }
 
     render() {
-        return (
-            <>
-                <Carousel />
-                <ComingSoon />
+        return ( 
+            <div>
+            <Carousel />
 
-                <table className="table table-striped" style={{ marginTop: 20 }}>
-                    <thead>
-                        <tr>
-                            <th>Cover</th>
-                            <th>Name</th>
-                            <th>Summary</th>
-                            <th>Rating</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.gameList()}
-                    </tbody>
-                </table>
-            </>
-        )
+            <form onSubmit = {
+                this.handleSubmit
+            } >
+            <label>
+            Search:
+            <input type = "text"
+            value = {
+                this.state.value
+            }
+            onChange = {
+                this.handleChange
+            }
+            /> 
+            </label> 
+            <input type = "submit"
+            value = "Submit" />
+            </form>
+
+            <table className = "table table-striped"
+            style = {
+                {
+                    marginTop: 20
+                }
+            }>
+            <thead>
+            <tr>
+            <th> Cover </th> 
+            <th> Name </th> 
+            <th> Summary </th> 
+            <th> Rating </th> 
+            </tr> 
+            </thead> 
+            <tbody>{
+                this.gameList()
+            }</tbody> 
+            </table> 
+            </div>
+            
+            )
+        }
     }
-}
