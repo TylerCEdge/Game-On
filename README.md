@@ -44,7 +44,7 @@
 
 ## About The Project
 
-[![G A M E O N][product-screenshot]](https://github.com/TylerCEdge/project-3/blob/master/DevReadme/FrontEnd/UI/productScreenShot.png)
+[![G A M E O N][product-screenshot]](DevReadme/FrontEnd/UI/07.01.19ui.png)
 
 <!--!!!!!!add deployed link here!!!!!!-->
 
@@ -163,7 +163,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Team UnAmeiezed' - [Who's Ameizing](https://i.imgur.com/a6hu0Bx.mp4) - unameized@gmail.com
+Team UnAmeiezed - [Who's Ameizing](https://i.imgur.com/a6hu0Bx.mp4) - unameized@gmail.com
 
 Project Link: [https://github.com/TylerCEdge/project-3](https://github.com/TylerCEdge/project-3)
 
