@@ -1,0 +1,40 @@
+h3 {
+    color: white;
+    font-family: 'Russo One', sans-serif;
+    text-decoration: none;
+    color: white;
+    font-size: 5rem;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+div {
+    /* background-color: rgb(58, 58, 58); */
+    opacity: .95; 
+}
+
+th {
+    /* background-color: rgb(199, 33, 33); */
+    font-family: 'Monda', sans-serif;
+    color: rgb(187, 190, 194);
+
+}
+
+
+
+td {
+    background-color: rgba(145, 18, 18, 0.8);
+    /* background-color: rgb(1, 1, 36); */
+    color: white;
+}
+
+.editBtn, a {
+    text-decoration: none;
+    color: lightslategray;
+}
+
+#container-wrapper {
+    border-style: solid;
+    border-radius: 5px;
+    border-color: slategray;
+}
