@@ -1,21 +1,24 @@
 {
-  "name": "main",
+  "name": "gameonapp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "client": "cd frontend && npm start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.0",
     "body-parser": "^1.19.0",
+    "concurrently": "^4.1.1",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
-    "igdb-api-node": "^3.1.7",
-    "mongoose": "^5.5.13"
+    "mongodb": "^3.2.7",
+    "mongoose": "^5.5.13",
+    "morgan": "^1.9.1"
   }
 }
